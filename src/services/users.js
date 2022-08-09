@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-
 const baseUrl = "https://jsonplaceholder.typicode.com"
 
 export const quotesApi = createApi({
@@ -9,11 +8,16 @@ export const quotesApi = createApi({
   }),
 
     endpoints: (builder) => ({
-    getRandomQuote: builder.query({
-      query: () => "/users",
+        getUsers: builder.query({
+      query: () => ({
+                url: `/users`,
+          method: "GET",
+        responseHandler: (response) => response.json(),
+      }),
     }),
-      
-  }),
-});
 
-export const { useGetRandomQuoteQuery } = quotesApi;
+    })
+})
+
+export const { useGetUsersQuery } = quotesApi;
+

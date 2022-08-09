@@ -1,9 +1,9 @@
 import React from 'react'
-import { useGetRandomQuoteQuery } from './services/users'
+import { useGetUsersQuery } from './services/users'
 
 function App() {
-  console.log(useGetRandomQuoteQuery())
-  const { data, loading, error } = useGetRandomQuoteQuery()
+  console.log(useGetUsersQuery())
+  const { data, loading, error } = useGetUsersQuery()
   return (
     <h1>Hello World</h1>
   )
