@@ -1,8 +1,9 @@
 import React from "react";
 import { useGetUsersQuery } from "../services/users";
-
+import { useGetPostsQuery } from "../services/postSlice";
 function Display() {
   const { data, loading, error } = useGetUsersQuery();
+  const {} = useGetPostsQuery();
   console.log(data);
   if (loading) {
     return <h1>Loading...</h1>;

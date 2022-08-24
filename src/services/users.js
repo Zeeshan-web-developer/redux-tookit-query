@@ -1,21 +1,6 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const baseUrl = process.env.REACT_APP_BASE_API_URL;
-const token = process.env.REACT_APP_TOKEN;
-export const bootcampsApi = createApi({
-  reducerPath: "bootcamps",
-  baseQuery: fetchBaseQuery({
-    baseUrl: baseUrl,
+import { apiSlice } from "./ApiSlice";
 
-    prepareHeaders: (headers, { getState }) => {
-      // const token = getState().users.token
-      // if (token) {
-      headers.set("Authorization", token);
-      headers.set("Content-Type", "application/json");
-      //}
-      return headers;
-    },
-  }),
-  tagTypes: ["bootcamps"],
+export const bootcampsApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getUsers: builder.query({
       query: () => ({
@@ -26,6 +11,8 @@ export const bootcampsApi = createApi({
         validateStatus: (response, result) =>
           response.status === 200 ? result : "error in fetching data",
       }),
+
+      //this is used to simplify the data
       transformResponse: (response) => {
         console.log("item", response);
         let loadedData = response.data.map((item) => {
