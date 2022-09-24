@@ -1,12 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App img[src*="googleusercontent.com"] {
+  opacity: 1;
 }

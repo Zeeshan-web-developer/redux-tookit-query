@@ -1,14 +1,9 @@
-import React from 'react'
-import Add from './pages/Add';
-import Display from './pages/Display';
+import React from "react";
+import GooGleMapp from "./GoogleMap";
+import Mapp from "./Mapp";
 
 function App() {
-  return (
-    <>
-      <Display />
-      <Add/>
-    </>
-  )
+  return <GooGleMapp />;
 }
 
-export default App
+export default App;
